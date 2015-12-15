@@ -1,0 +1,15 @@
+<h3>Lists of Posts</h3>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Body</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="p in posts">
+			<td>{{ p.title }}</td>
+			<td>{{ p.body }}</td>
+		</tr>
+	</tbody>
+</table>
