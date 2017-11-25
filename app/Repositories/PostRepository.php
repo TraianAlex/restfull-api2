@@ -20,6 +20,11 @@ class PostRepository
 
 	public function create($data)
 	{
-		return 1;//the id of PostService@create
+		return 1;//return an id
+	}
+
+	public function article($id)
+	{
+		return $this->post->findOrFail($id);
 	}
 }

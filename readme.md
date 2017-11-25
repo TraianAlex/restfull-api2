@@ -1,3 +1,5 @@
+Restull Api + Angular auth by credentials and get a oauth token
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)

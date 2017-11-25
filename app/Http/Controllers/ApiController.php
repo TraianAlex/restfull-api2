@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Repositories\PostRepository;
+use App\Services\Postservice;
 
 class ApiController extends Controller
 {
@@ -57,7 +58,7 @@ class ApiController extends Controller
      */
     public function show($id)
     {
-        //
+        return $this->postRepository->article($id);
     }
 
     /**

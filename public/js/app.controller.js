@@ -1,6 +1,8 @@
 angular.module('app.controllers', [])
+
 	.controller('LoginController', ['$scope', '$http', '$rootScope', '$location',
 		function($scope, $http, $rootScope, $location){
+
 			$scope.email = "";
 			$scope.password = "";
 
@@ -10,6 +12,7 @@ angular.module('app.controllers', [])
 			};
 
 			$scope.login = function(){
+
 				$http.post('/oauth/access_token', {
 					username: $scope.email,
 					password: $scope.password,
@@ -35,6 +38,7 @@ angular.module('app.controllers', [])
 
 	.controller('PostController', ['$scope', '$rootScope', '$http', '$location',
 		function($scope, $rootScope, $http, $location){
+			
 			$scope.posts = [];
 
 			$http({
@@ -46,6 +50,27 @@ angular.module('app.controllers', [])
 			})
 			.success(function(data){
 				$scope.posts = data;
+			})
+			.error(function(data){
+				$location.path('login');
+			})
+		}
+	])
+
+	.controller('ShowController', ['$scope', '$rootScope', '$http', '$location', '$routeParams',
+		function($scope, $rootScope, $http, $location, $routeParams){
+			
+			$scope.post = [];
+
+			$http({
+				method: "GET",
+				url: "/post/" + $routeParams.id,
+				headers: {
+					Authorization: "Bearer " + $rootScope.token
+				}
+			})
+			.success(function(data){
+				$scope.post = data;
 			})
 			.error(function(data){
 				$location.path('login');

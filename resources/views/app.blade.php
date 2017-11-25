@@ -22,17 +22,18 @@
                 <div class="navbar-header">
                         <a href="{{ url('home') }}" class="navbar-brand">App</a>
                 </div>
-               
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('home#/posts') }}">Posts</a></li>
+                </ul>
+                </ul>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        @if(Auth::check())
-                            <li><a href="{{ route('') }}">Test</a></li>
-                            <li><a href="{{ route('') }}">Update profile</a></li>
-                            <li><a href="{{ url('auth/logout') }}">Sign out</a></li>
-                        @else
-                            <li><a href="{{ url('auth/register') }}">Sign up</a></li>
-                            <li><a href="{{ url('auth/login') }}">Sign in</a></li>
-                        @endif
+                    @if(Auth::guest())    
+                        <li><a href="{{ url('#/login') }}">Sign in</a></li>
+                        <li><a href="{{ url('auth/register') }}">Sign up</a></li>
+                    @else
+                        <li><a href="{{ url('auth/logout') }}">Sign out</a></li>
+                    @endif
                     </ul>
                 </div>
             </div>

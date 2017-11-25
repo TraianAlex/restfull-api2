@@ -1,5 +1,5 @@
 <?php
-
+//Angular
 get('home', function(){
 	return view('app');
 });
@@ -18,5 +18,6 @@ post('oauth/access_token', function(){
 //});
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return redirect('home');
 });

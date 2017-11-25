@@ -21,12 +21,12 @@
 							</div>
 						</div>
 						
-						<div class="form-group {{ $errors->has('username') ? 'has-error' : ''}}">
-							<label class="col-md-4 control-label">Username</label>
+						<div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
+							<label class="col-md-4 control-label">Name</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="username" value="{{ old('username') }}">
-								@if($errors->has('username'))
-									<span class="help-block">{{ $errors->first('username') }}</span>
+								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
+								@if($errors->has('name'))
+									<span class="help-block">{{ $errors->first('name') }}</span>
 								@endif
 							</div>
 						</div>
@@ -50,21 +50,7 @@
 								@endif
 							</div>
 						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">First Name</label>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="first_name" value="{{ old('first_name') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Last Name</label>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="last_name" value="{{ old('last_name') }}">
-							</div>
-						</div>
-
+						
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">

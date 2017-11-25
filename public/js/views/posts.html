@@ -8,7 +8,7 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="p in posts">
-			<td>{{ p.title }}</td>
+			<td><a href="#/post/{{ p.id }}">{{ p.title }}</a></td>
 			<td>{{ p.body }}</td>
 		</tr>
 	</tbody>
